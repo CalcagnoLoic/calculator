@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: leagueSpartan;
+    src: url(../fonts/League_Spartan/static/LeagueSpartan-Regular.ttf);
+}
+
+@layer base {
+    html {
+        font-family: leagueSpartan;
+    }
+}
+
+/*npx tailwindcss -i assets/style/style.css -o assets/style/output.css --watch*/
