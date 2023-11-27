@@ -13,4 +13,10 @@
     }
 }
 
+@layer components {
+    button {
+        @apply w-14 h-14 p-3 rounded text-4xl border-b-4;
+    }
+}
+
 /*npx tailwindcss -i assets/style/style.css -o assets/style/output.css --watch*/
