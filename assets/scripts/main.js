@@ -1,17 +1,71 @@
+/***********************************
+ * Récupération des éléments du DOM
+ ***********************************/
 const operands = document.querySelectorAll("#operand");
+const input = document.querySelectorAll("input");
 const btn_del = document.getElementById("btn-del");
-const btn_plus = document.getElementById("btn_+");
-const btn_minus = document.getElementById("btn_-");
-const btn_divide = document.getElementById("btn_divide");
-const btn_multiply = document.getElementById("btn_multiply");
+const operators = document.querySelectorAll("#operation");
 const reset = document.getElementById("reset");
 const calculate = document.getElementById("calculation");
 const dot = document.getElementById("dot");
-const display_calculation = document.getElementById("display");
-const result = document.getElementById("result");
+const previousData = document.getElementById("previousData");
+let previousDataValue = previousData.innerText;
+const currentData = document.getElementById("currentData");
+let currentDataValue = currentData.innerText;
 
+/*********************
+ * Logique appliquée
+ ********************/
 operands.forEach((operand) => {
     operand.addEventListener("click", () => {
-        display_calculation.innerText = operand.value;
+        displayCalculation(operand.innerText);
+        display();
     });
 });
+
+operators.forEach(operator => {
+    operator.addEventListener('click', () => {
+
+    })
+})
+
+btn_del.addEventListener("click", () => {
+    deleteSimpleValue();
+    display();
+});
+
+reset.addEventListener("click", () => {
+    removeAll();
+    display()
+});
+
+/************
+ * Fonctions
+ ************/
+
+/**
+ * Permet l'affichage après une action
+ */
+const display = () => {
+    currentData.innerText = currentDataValue;
+};
+
+/**
+ * Function permettant d'écrire le calcul dans la calculatrice
+ * @param {*} newValue
+ */
+const displayCalculation = (newValue) => {
+    currentDataValue = currentDataValue.toString() + newValue.toString();
+};
+
+const deleteSimpleValue = () => {
+    currentDataValue = currentDataValue.toString().slice(0, -1);
+};
+
+/**
+ * Fonction permettant la suppression
+ */
+const removeAll = () => {
+    previousDataValue = "";
+    currentDataValue = "";
+};

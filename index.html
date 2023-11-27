@@ -29,19 +29,62 @@
                 class="flex justify-center items-center flex-col mx-auto gap-4"
             >
                 <!-- Container de changement de thème-->
-                <div class="flex gap-16">
+                <div class="flex gap-20">
                     <h2 class="text-white text-4xl font-bold self-baseline">
                         calc
                     </h2>
-                    <div class="flex self-baseline">
+                    <div class="flex self-baseline gap-4">
                         <p class="text-white uppercase text-[15px]">Theme</p>
+                        <div
+                            class="flex gap-5 rounded bg-veryDarkDesaturatedBlue w-18 h-4"
+                        >
+                            <div class="flex flex-col-reverse">
+                                <input
+                                    class="appearance-none bg-darkRed absolute top-34 h-2 w-2 rounded-full"
+                                    type="radio"
+                                    name="theme"
+                                    id="theme1"
+                                    value="0"
+                                    checked
+                                />
+                                <label for="theme1">1</label>
+                            </div>
+
+                            <div class="flex flex-col-reverse">
+                                <input
+                                    class="appearance-none"
+                                    type="radio"
+                                    name="theme"
+                                    id="theme2"
+                                    value="1"
+                                />
+                                <label for="theme2">2</label>
+                            </div>
+
+                            <div class="flex flex-col-reverse">
+                                <input
+                                    class="appearance-none"
+                                    type="radio"
+                                    name="theme"
+                                    id="theme3"
+                                    value="2"
+                                />
+                                <label for="theme3">3</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Container d'affichage du résultat -->
                 <div class="bg-veryDarkDesaturatedBlueBg rounded p-5 w-[308px]">
-                    <span id="display"></span>
-                    <span class="flex justify-end text-white" id="result">---</span>
+                    <span
+                        class="text-white flex justify-end"
+                        id="previousData"
+                    ></span>
+                    <span
+                        class="flex justify-end text-white"
+                        id="currentData"
+                    ></span>
                 </div>
 
                 <!-- Container 'calculatrice '-->
@@ -97,7 +140,7 @@
                         </button>
                         <button
                             class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="btn_+"
+                            id="operation"
                         >
                             +
                         </button>
@@ -124,7 +167,7 @@
                         </button>
                         <button
                             class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="btn_-"
+                            id="operation"
                         >
                             -
                         </button>
@@ -145,13 +188,13 @@
                         </button>
                         <button
                             class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="btn_divide"
+                            id="operation"
                         >
                             /
                         </button>
                         <button
                             class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="btn_multiply"
+                            id="operation"
                         >
                             x
                         </button>
@@ -164,8 +207,10 @@
                         >
                             RESET
                         </button>
-                        <button class="bg-red text-white border-b-darkRed 
-                    w-32" id="calculation">
+                        <button
+                            class="bg-red text-white border-b-darkRed w-32"
+                            id="calculation"
+                        >
                             =
                         </button>
                     </div>
