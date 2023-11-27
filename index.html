@@ -3,8 +3,184 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <meta name="author" content="Calcagno Loïc" />
+        <meta
+            name="description"
+            content="Creation of a calculator with VanillaJS and TailwindCSS"
+        />
+        <title>Calculator</title>
         <link rel="stylesheet" href="assets/style/output.css" />
+        <link
+            rel="shortcut icon"
+            href="assets/images/favicon-32x32.png"
+            type="image/x-icon"
+        />
     </head>
-    <body></body>
+    <body
+        class="font-leagueSpartan bg-veryDarkDesaturatedBlueMain flex flex-col h-screen justify-between"
+    >
+        <header class="py-5 bg-veryDarkDesaturatedBlueBg">
+            <h1 class="text-center text-white text-2xl">Calculator app</h1>
+        </header>
+
+        <main>
+            <!-- Container principal -->
+            <div
+                class="flex justify-center items-center flex-col mx-auto gap-4"
+            >
+                <!-- Container de changement de thème-->
+                <div class="flex gap-16">
+                    <h2 class="text-white text-4xl font-bold self-baseline">
+                        calc
+                    </h2>
+                    <div class="flex self-baseline">
+                        <p class="text-white uppercase text-[15px]">Theme</p>
+                    </div>
+                </div>
+
+                <!-- Container d'affichage du résultat -->
+                <div class="bg-veryDarkDesaturatedBlueBg rounded p-5 w-[308px]">
+                    <span id="display"></span>
+                    <span class="flex justify-end text-white" id="result">---</span>
+                </div>
+
+                <!-- Container 'calculatrice '-->
+                <div
+                    class="bg-veryDarkDesaturatedBlue p-5 rounded flex flex-col gap-3"
+                >
+                    <!-- Rang 7 à DEL -->
+                    <div class="flex justify-between gap-3">
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            7
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            8
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            9
+                        </button>
+                        <button
+                            class="text-xl bg-desaturatedDarkBlueBg border-b-desaturatedDarkBlueShadow text-white"
+                            id="btn-del"
+                        >
+                            DEL
+                        </button>
+                    </div>
+                    <!-- Rang 4 à + -->
+                    <div class="flex justify-between gap-3">
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            4
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            5
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            6
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="btn_+"
+                        >
+                            +
+                        </button>
+                    </div>
+                    <!-- Rang 1 à - -->
+                    <div class="flex justify-between gap-3">
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            1
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            2
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            3
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="btn_-"
+                        >
+                            -
+                        </button>
+                    </div>
+                    <!-- Rang . à x -->
+                    <div class="flex justify-between gap-3">
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="dot"
+                        >
+                            .
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="operand"
+                        >
+                            0
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="btn_divide"
+                        >
+                            /
+                        </button>
+                        <button
+                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
+                            id="btn_multiply"
+                        >
+                            x
+                        </button>
+                    </div>
+                    <!-- Rang RESET et = -->
+                    <div class="flex justify-between gap-3">
+                        <button
+                            class="text-xl bg-desaturatedDarkBlueBg border-b-desaturatedDarkBlueShadow text-white text-center w-32"
+                            id="reset"
+                        >
+                            RESET
+                        </button>
+                        <button class="bg-red text-white border-b-darkRed 
+                    w-32" id="calculation">
+                            =
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="py-5 bg-veryDarkDesaturatedBlueBg">
+            <p class="text-center text-white">
+                Coded by
+                <a href="https://github.com/CalcagnoLoic" target="_blank"
+                    >@CalcagnoLoic</a
+                >.
+            </p>
+        </footer>
+        <script src="assets/scripts/main.js"></script>
+    </body>
 </html>

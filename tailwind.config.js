@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
     content: ["*.html"],
@@ -55,7 +54,7 @@ module.exports = {
                 veryDarkBlue: "hsl(198, 20%, 13%)",
             },
             fontFamily: {
-                leagueSpartan: ["leagueSpartan", ...defaultTheme],
+                leagueSpartan: ["leagueSpartan"],
             },
         },
     },
