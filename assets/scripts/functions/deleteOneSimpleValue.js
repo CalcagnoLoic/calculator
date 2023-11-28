@@ -1,4 +1,4 @@
-import { displayOnCalculatorScreen } from "./displayOnCalculatorScreen.js";
+import { displayOnCalculatorScreenForCurrentData } from "./displayOnCalculatorScreen.js";
 
 export const handleDelete = () => {
     const btn_del = document.getElementById("btn-del");
@@ -10,16 +10,9 @@ export const handleDelete = () => {
 
 const deleteSimpleValue = () => {
     const currentData = document.getElementById("currentData");
-    const previousData = document.getElementById("previousData");
     let currentDataValue = currentData.innerText;
-    let previousDataValue = previousData.innerText;
 
     currentDataValue = currentDataValue.slice(0, -1);
 
-    displayOnCalculatorScreen(
-        currentData,
-        currentDataValue,
-        previousData,
-        previousDataValue
-    );
+    displayOnCalculatorScreenForCurrentData(currentData, currentDataValue);
 };

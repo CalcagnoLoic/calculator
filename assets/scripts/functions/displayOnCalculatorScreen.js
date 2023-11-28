@@ -1,3 +1,11 @@
+export const displayOnCalculatorScreenForCurrentData = (
+    curr,
+    currVal
+) => {
+    //affichage de la currentValue
+    curr.innerText = currVal;
+}
+
 export const displayOnCalculatorScreen = (
     curr,
     currVal = " ",

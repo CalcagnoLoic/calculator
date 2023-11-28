@@ -1,4 +1,4 @@
-import { displayOnCalculatorScreen } from "./displayOnCalculatorScreen.js";
+import { displayOnCalculatorScreenForCurrentData } from "./displayOnCalculatorScreen.js";
 
 export const handleOperand = () => {
     const operands = document.querySelectorAll(".operand");
@@ -16,5 +16,5 @@ const displayCalculation = newValue => {
 
     currentDataValue = currentDataValue + newValue;
 
-    displayOnCalculatorScreen(currentData, currentDataValue);
+    displayOnCalculatorScreenForCurrentData(currentData, currentDataValue);
 };
