@@ -20,3 +20,5 @@ README-t*
 style-*
 node_modules
 functions.js
+variables.js
+switchTheme.js

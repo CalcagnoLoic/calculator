@@ -6,47 +6,41 @@
         <meta name="author" content="Calcagno Loïc" />
         <meta
             name="description"
-            content="Creation of a calculator with VanillaJS and TailwindCSS"
-        />
+            content="Creation of a calculator with VanillaJS and TailwindCSS" />
         <title>Calculator</title>
         <link rel="stylesheet" href="assets/style/output.css" />
         <link
             rel="shortcut icon"
             href="assets/images/favicon-32x32.png"
-            type="image/x-icon"
-        />
+            type="image/x-icon" />
     </head>
     <body
-        class="font-leagueSpartan bg-veryDarkDesaturatedBlueMain flex flex-col h-screen justify-between"
-    >
-        <header class="py-5 bg-veryDarkDesaturatedBlueBg">
-            <h1 class="text-center text-white text-2xl">Calculator app</h1>
+        class="flex h-screen flex-col justify-between bg-veryDarkDesaturatedBlueMain font-leagueSpartan">
+        <header class="bg-veryDarkDesaturatedBlueBg py-5">
+            <h1 class="text-center text-2xl text-white">Calculator app</h1>
         </header>
 
         <main>
             <!-- Container principal -->
             <div
-                class="flex justify-center items-center flex-col mx-auto gap-4"
-            >
+                class="mx-auto flex flex-col items-center justify-center gap-4">
                 <!-- Container de changement de thème-->
                 <div class="flex gap-20">
-                    <h2 class="text-white text-4xl font-bold self-baseline">
+                    <h2 class="self-baseline text-4xl font-bold text-white">
                         calc
                     </h2>
-                    <div class="flex self-baseline gap-4">
-                        <p class="text-white uppercase text-[15px]">Theme</p>
+                    <div class="flex gap-4 self-baseline">
+                        <p class="text-[15px] uppercase text-white">Theme</p>
                         <div
-                            class="flex gap-5 rounded bg-veryDarkDesaturatedBlue w-18 h-4"
-                        >
+                            class="w-18 flex h-4 gap-5 rounded bg-veryDarkDesaturatedBlue">
                             <div class="flex flex-col-reverse">
                                 <input
-                                    class="appearance-none bg-darkRed absolute top-34 h-2 w-2 rounded-full"
+                                    class="top-34 absolute h-2 w-2 appearance-none rounded-full bg-darkRed"
                                     type="radio"
                                     name="theme"
                                     id="theme1"
                                     value="0"
-                                    checked
-                                />
+                                    checked />
                                 <label for="theme1">1</label>
                             </div>
 
@@ -56,8 +50,7 @@
                                     type="radio"
                                     name="theme"
                                     id="theme2"
-                                    value="1"
-                                />
+                                    value="1" />
                                 <label for="theme2">2</label>
                             </div>
 
@@ -67,8 +60,7 @@
                                     type="radio"
                                     name="theme"
                                     id="theme3"
-                                    value="2"
-                                />
+                                    value="2" />
                                 <label for="theme3">3</label>
                             </div>
                         </div>
@@ -76,21 +68,18 @@
                 </div>
 
                 <!-- Container d'affichage du résultat -->
-                <div class="bg-veryDarkDesaturatedBlueBg rounded p-5 w-[308px]">
+                <div class="w-[308px] rounded bg-veryDarkDesaturatedBlueBg p-5">
                     <span
-                        class="text-white flex justify-end"
-                        id="previousData"
-                    ></span>
+                        class="flex justify-end text-white"
+                        id="previousData"></span>
                     <span
-                        class="flex justify-end text-white font-bold text-2xl"
-                        id="currentData"
-                    ></span>
+                        class="flex justify-end text-2xl font-bold text-white"
+                        id="currentData"></span>
                 </div>
 
                 <!-- Container 'calculatrice '-->
                 <div
-                    class="bg-veryDarkDesaturatedBlue p-5 rounded flex flex-col gap-3"
-                >
+                    class="flex flex-col gap-3 rounded bg-veryDarkDesaturatedBlue p-5">
                     <!-- Rang 7 à DEL -->
                     <div class="flex justify-between gap-3">
                         <button class="btn btn_primary operand">7</button>
@@ -132,7 +121,7 @@
             </div>
         </main>
 
-        <footer class="py-5 bg-veryDarkDesaturatedBlueBg">
+        <footer class="bg-veryDarkDesaturatedBlueBg py-5">
             <p class="text-center text-white">
                 Coded by
                 <a href="https://github.com/CalcagnoLoic" target="_blank"
