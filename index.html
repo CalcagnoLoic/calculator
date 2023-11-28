@@ -13,6 +13,7 @@
             rel="shortcut icon"
             href="assets/images/favicon-32x32.png"
             type="image/x-icon" />
+        <script src="assets/scripts/main.js" type="module"></script>
     </head>
     <body
         class="flex h-screen flex-col justify-between bg-veryDarkDesaturatedBlueMain font-leagueSpartan">
@@ -82,37 +83,105 @@
                     class="flex flex-col gap-3 rounded bg-veryDarkDesaturatedBlue p-5">
                     <!-- Rang 7 à DEL -->
                     <div class="flex justify-between gap-3">
-                        <button class="btn btn_primary operand">7</button>
-                        <button class="btn btn_primary operand">8</button>
-                        <button class="btn btn_primary operand">9</button>
-                        <button class="btn btn_delete operand" id="btn-del">
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            7
+                        </button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            8
+                        </button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            9
+                        </button>
+                        <button
+                            class="btn btn_delete"
+                            id="btn-del"
+                            onclick="handleDelete()">
                             DEL
                         </button>
                     </div>
                     <!-- Rang 4 à + -->
                     <div class="flex justify-between gap-3">
-                        <button class="btn btn_primary operand">4</button>
-                        <button class="btn btn_primary operand">5</button>
-                        <button class="btn btn_primary operand">6</button>
-                        <button class="btn btn_primary operation">+</button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            4
+                        </button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            5
+                        </button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            6
+                        </button>
+                        <button
+                            class="btn btn_primary operation"
+                            onclick="handleOperations('+')">
+                            +
+                        </button>
                     </div>
                     <!-- Rang 1 à - -->
                     <div class="flex justify-between gap-3">
-                        <button class="btn btn_primary operand">1</button>
-                        <button class="btn btn_primary operand">2</button>
-                        <button class="btn btn_primary operand">3</button>
-                        <button class="btn btn_primary operation">-</button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            1
+                        </button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            2
+                        </button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            3
+                        </button>
+                        <button
+                            class="btn btn_primary operation"
+                            onclick="handleOperations('-')">
+                            -
+                        </button>
                     </div>
                     <!-- Rang . à x -->
                     <div class="flex justify-between gap-3">
-                        <button class="btn btn_primary operand">.</button>
-                        <button class="btn btn_primary operand">0</button>
-                        <button class="btn btn_primary operation">/</button>
-                        <button class="btn btn_primary operation">x</button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            .
+                        </button>
+                        <button
+                            class="btn btn_primary operand"
+                            onclick="handleOperand()">
+                            0
+                        </button>
+                        <button
+                            class="btn btn_primary operation"
+                            onclick="handleOperations('/')">
+                            /
+                        </button>
+                        <button
+                            class="btn btn_primary operation"
+                            onclick="handleOperations('*')">
+                            x
+                        </button>
                     </div>
                     <!-- Rang RESET et = -->
                     <div class="flex justify-between gap-3">
-                        <button class="btn btn_reset" id="reset">RESET</button>
+                        <button
+                            class="btn btn_reset"
+                            id="reset"
+                            onclick="handleRemove()">
+                            RESET
+                        </button>
                         <button class="btn btn_remove" id="calculation">
                             =
                         </button>
@@ -129,6 +198,5 @@
                 >.
             </p>
         </footer>
-        <script src="assets/scripts/main.js"></script>
     </body>
 </html>
