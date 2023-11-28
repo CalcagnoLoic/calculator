@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -93,124 +93,38 @@
                 >
                     <!-- Rang 7 à DEL -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            7
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            8
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            9
-                        </button>
-                        <button
-                            class="text-xl bg-desaturatedDarkBlueBg border-b-desaturatedDarkBlueShadow text-white"
-                            id="btn-del"
-                        >
+                        <button class="btn btn_primary operand">7</button>
+                        <button class="btn btn_primary operand">8</button>
+                        <button class="btn btn_primary operand">9</button>
+                        <button class="btn btn_delete operand" id="btn-del">
                             DEL
                         </button>
                     </div>
                     <!-- Rang 4 à + -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            4
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            5
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            6
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operation"
-                        >
-                            +
-                        </button>
+                        <button class="btn btn_primary operand">4</button>
+                        <button class="btn btn_primary operand">5</button>
+                        <button class="btn btn_primary operand">6</button>
+                        <button class="btn btn_primary operation">+</button>
                     </div>
                     <!-- Rang 1 à - -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            1
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            2
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            3
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operation"
-                        >
-                            -
-                        </button>
+                        <button class="btn btn_primary operand">1</button>
+                        <button class="btn btn_primary operand">2</button>
+                        <button class="btn btn_primary operand">3</button>
+                        <button class="btn btn_primary operation">-</button>
                     </div>
                     <!-- Rang . à x -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="dot"
-                        >
-                            .
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operand"
-                        >
-                            0
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operation"
-                        >
-                            /
-                        </button>
-                        <button
-                            class="bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue"
-                            id="operation"
-                        >
-                            x
-                        </button>
+                        <button class="btn btn_primary operand">.</button>
+                        <button class="btn btn_primary operand">0</button>
+                        <button class="btn btn_primary operation">/</button>
+                        <button class="btn btn_primary operation">x</button>
                     </div>
                     <!-- Rang RESET et = -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="text-xl bg-desaturatedDarkBlueBg border-b-desaturatedDarkBlueShadow text-white text-center w-32"
-                            id="reset"
-                        >
-                            RESET
-                        </button>
-                        <button
-                            class="bg-red text-white border-b-darkRed w-32"
-                            id="calculation"
-                        >
+                        <button class="btn btn_reset" id="reset">RESET</button>
+                        <button class="btn btn_remove" id="calculation">
                             =
                         </button>
                     </div>

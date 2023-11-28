@@ -14,8 +14,24 @@
 }
 
 @layer components {
-    button {
+    .btn {
         @apply w-14 h-14 p-3 rounded text-4xl border-b-4;
+    }
+
+    .btn_primary {
+        @apply bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue;
+    }
+
+    .btn_delete {
+        @apply bg-desaturatedDarkBlueBg border-b-desaturatedDarkBlueShadow text-white text-2xl;
+    }
+
+    .btn_reset {
+        @apply text-xl bg-desaturatedDarkBlueBg border-b-desaturatedDarkBlueShadow text-white text-center w-32;
+    }
+
+    .btn_remove {
+        @apply bg-red text-white border-b-darkRed w-32;
     }
 }
 
