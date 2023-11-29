@@ -16,7 +16,7 @@
         <script src="assets/scripts/main.js" type="module"></script>
     </head>
     <body
-        class="bg-primary theme-1 flex h-screen flex-col justify-between font-leagueSpartan">
+        class="bg-primary theme theme-1 flex h-screen flex-col justify-between font-leagueSpartan">
         <main class="mt-16">
             <!-- Container principal -->
             <div
@@ -39,6 +39,7 @@
                                 id="theme-1"
                                 value="theme-1"
                                 name="theme"
+                                onclick="switchIntoTheme1()"
                                 checked />
                             <label
                                 for="theme-1"
@@ -50,6 +51,7 @@
                                 type="radio"
                                 id="theme-2"
                                 value="theme-2"
+                                onclick="switchIntoTheme2()"
                                 name="theme" />
                             <label
                                 for="theme-2"
@@ -61,6 +63,7 @@
                                 type="radio"
                                 id="theme-3"
                                 value="theme-3"
+                                onclick="switchIntoTheme3()"
                                 name="theme" />
                             <label
                                 for="theme-3"
