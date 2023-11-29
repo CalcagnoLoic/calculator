@@ -15,23 +15,35 @@
 
 @layer components {
     .btn {
-        @apply w-14 h-14 p-3 rounded text-4xl border-b-4;
+        @apply h-14 w-14 rounded border-b-4 p-3 text-4xl;
     }
 
     .btn_primary {
-        @apply bg-lightGrayishOrange border-b-grayishOrange text-veryDarkGrayishBlue;
+        @apply bg-ternary border-b-ternary-dark text-quaternary;
     }
 
     .btn_delete {
-        @apply bg-desaturatedDarkBlueBg border-b-desaturatedDarkBlueShadow text-white text-2xl;
+        @apply bg-primary-light border-b-primary-lighter text-quaternary-light text-2xl;
     }
 
     .btn_reset {
-        @apply text-xl bg-desaturatedDarkBlueBg border-b-desaturatedDarkBlueShadow text-white text-center w-32;
+        @apply bg-primary-light border-b-primary-lighter text-quaternary-light w-32 text-center text-xl;
     }
 
     .btn_remove {
-        @apply bg-red text-white border-b-darkRed w-32;
+        @apply bg-secondary text-quaternary-light border-b-secondary-dark w-32;
+    }
+
+    .toggle-input[value="theme-1"]:checked ~ .toggle-span {
+        @apply bg-secondary left-[7px];
+    }
+
+    .toggle-input[value="theme-2"]:checked ~ .toggle-span {
+        @apply bg-secondary left-[36px];
+    }
+
+    .toggle-input[value="theme-3"]:checked ~ .toggle-span {
+        @apply bg-secondary left-[65px];
     }
 }
 
