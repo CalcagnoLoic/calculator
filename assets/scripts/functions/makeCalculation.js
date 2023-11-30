@@ -1,14 +1,16 @@
-import { displayOnCalculatorScreen } from "./displayOnCalculatorScreen.js";
-
-export const makeCalculation = operation => {
-    const currentData = document.getElementById("currentData");
-    const previousData = document.getElementById("previousData");
-    let currentDataValue = currentData.innerText;
-    let previousDataValue = previousData.innerText;
+export const makeCalculation = (
+    currentValue,
+    previousValue,
+    operation,
+    nodeCurrent,
+    nodePrevious
+) => {
+    let firstNumber = parseFloat(currentValue);
+    let secondNumber = parseFloat(previousValue);
+    let newCurrentValue = nodeCurrent.innerText
+    let newPreviousValue = nodePrevious.innerText
     let result;
 
-    let firstNumber = parseFloat(currentDataValue);
-    let secondNumber = parseFloat(previousDataValue);
     if (isNaN(firstNumber) || isNaN(secondNumber)) return;
 
     switch (operation) {
@@ -18,7 +20,7 @@ export const makeCalculation = operation => {
         case "-":
             result = firstNumber - secondNumber;
             break;
-        case "*":
+        case "x":
             result = firstNumber * secondNumber;
             break;
         case "/":
@@ -28,15 +30,9 @@ export const makeCalculation = operation => {
             return;
     }
 
-    currentData.innerText = result;
-    previousData.innerText = " ";
-    operation = undefined;
+    newCurrentValue = result;
+    newPreviousValue = firstNumber + operation + secondNumber;
+    operation = "";
 
-    displayOnCalculatorScreen(
-        currentData,
-        currentDataValue,
-        previousData,
-        previousDataValue,
-        operation
-    );
+    return { newCurrentValue, newPreviousValue, operation };
 };

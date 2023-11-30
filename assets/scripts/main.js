@@ -4,6 +4,7 @@ import { deleteOneSimpleValue } from "./functions/deleteOneSimpleValue.js";
 import { removeAll } from "./functions/removeAll.js";
 import { displayOnCalculatorScreenForCurrentData } from "./functions/displayOnCalculatorScreen.js";
 import { displayOnCalculatorScreen } from "./functions/displayOnCalculatorScreen.js";
+import { makeCalculation } from "./functions/makeCalculation.js";
 
 const handleOperand = () => {
     const operands = document.querySelectorAll(".operand");
@@ -102,12 +103,45 @@ const handleSwitchTheme = () => {
     });
 };
 
+const handleCalculation = () => {
+    const result_btn = document.getElementById("calculation");
+
+    result_btn.addEventListener("click", () => {
+        const currentData = document.getElementById("currentData");
+        const previousData = document.getElementById("previousData");
+        const currentDataValue = currentData.innerText;
+        const previousDataValue = previousData.innerText;
+        let operationSign = previousDataValue.substring(
+            previousDataValue.length - 1
+        );
+
+        let { newCurrentValue, newPreviousValue, operation } = makeCalculation(
+            currentDataValue,
+            previousDataValue,
+            operationSign,
+            currentData,
+            previousData
+        );
+
+        console.log(newPreviousValue);
+
+        displayOnCalculatorScreen(
+            currentData,
+            newCurrentValue,
+            previousData,
+            newPreviousValue,
+            operation
+        );
+    });
+};
+
 const main = () => {
     handleOperand();
     handleOperation();
     handleDelete();
     handleRemove();
     handleSwitchTheme();
+    handleCalculation();
 };
 
 main();
