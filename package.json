@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "jsdoc": "./node_modules/jsdoc/jsdoc.js"
+        "format": "prettier --write ."
     },
     "devDependencies": {
         "eslint": "^8.54.0",
