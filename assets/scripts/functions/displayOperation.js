@@ -1,6 +1,8 @@
 /**
  * This function displays the operators when users pressed on.
+ * @param {string} currentValue - The first concatened number
  * @param {string} operate - Value of operator
+ * @returns {string} Differents values to display
  */
 export const displayOperation = (currentValue, operator) => {
     if (currentValue === "")

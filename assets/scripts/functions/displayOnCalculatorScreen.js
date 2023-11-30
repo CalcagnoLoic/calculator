@@ -28,5 +28,5 @@ export const displayOnCalculatorScreen = (
 
     // affichage de la previousValue
     if (operation !== undefined) prev.innerText = prevVal + operation + currVal;
-    if(operation === "") prev.innerText = ""
+    if (operation === "") prev.innerText = "";
 };

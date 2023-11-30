@@ -6,6 +6,9 @@ import { displayOnCalculatorScreenForCurrentData } from "./functions/displayOnCa
 import { displayOnCalculatorScreen } from "./functions/displayOnCalculatorScreen.js";
 import { makeCalculation } from "./functions/makeCalculation.js";
 
+/**
+ * Function linked to numeric button actions
+ */
 const handleOperand = () => {
     const operands = document.querySelectorAll(".operand");
 
@@ -22,6 +25,9 @@ const handleOperand = () => {
     });
 };
 
+/**
+ * Function linked to operator button actions
+ */
 const handleOperation = () => {
     const operators = document.querySelectorAll(".operation");
 
@@ -46,6 +52,9 @@ const handleOperation = () => {
     });
 };
 
+/**
+ * Function linked to the DEL delete button action
+ */
 const handleDelete = () => {
     const btn_del = document.getElementById("btn-del");
 
@@ -59,6 +68,9 @@ const handleDelete = () => {
     });
 };
 
+/**
+ * Function linked to RESET delete button action
+ */
 const handleRemove = () => {
     const reset = document.getElementById("reset");
 
@@ -85,6 +97,9 @@ const handleRemove = () => {
     });
 };
 
+/**
+ * Toggle function for different themes
+ */
 const handleSwitchTheme = () => {
     const theme = document.querySelector(".theme");
 
@@ -103,6 +118,9 @@ const handleSwitchTheme = () => {
     });
 };
 
+/**
+ * Function linked to mathematical result
+ */
 const handleCalculation = () => {
     const result_btn = document.getElementById("calculation");
 
