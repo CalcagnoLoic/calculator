@@ -1,14 +1,25 @@
-import { displayOnCalculatorScreen } from "./displayOnCalculatorScreen.js";
-
-export const makeCalculation = operation => {
-    const currentData = document.getElementById("currentData");
-    const previousData = document.getElementById("previousData");
-    let currentDataValue = currentData.innerText;
-    let previousDataValue = previousData.innerText;
+/**
+ * Function to perform the mathematical operation
+ * @param {string} currentValue - Value of first number
+ * @param {string} previousValue - Value of second number
+ * @param {string} operation - Value of operator
+ * @param {Node} nodeCurrent - Node of the main line of calculator screen
+ * @param {Node} nodePrevious - Node of the secondary line of calculator screen
+ * @returns {string|void}
+ */
+export const makeCalculation = (
+    currentValue,
+    previousValue,
+    operation,
+    nodeCurrent,
+    nodePrevious
+) => {
+    let firstNumber = parseFloat(currentValue);
+    let secondNumber = parseFloat(previousValue);
+    let newCurrentValue = nodeCurrent.innerText;
+    let newPreviousValue = nodePrevious.innerText;
     let result;
 
-    let firstNumber = parseFloat(currentDataValue);
-    let secondNumber = parseFloat(previousDataValue);
     if (isNaN(firstNumber) || isNaN(secondNumber)) return;
 
     switch (operation) {
@@ -16,27 +27,21 @@ export const makeCalculation = operation => {
             result = firstNumber + secondNumber;
             break;
         case "-":
-            result = firstNumber - secondNumber;
+            result = secondNumber - firstNumber;
             break;
-        case "*":
+        case "x":
             result = firstNumber * secondNumber;
             break;
         case "/":
-            result = firstNumber / secondNumber;
+            result = secondNumber / firstNumber;
             break;
         default:
             return;
     }
 
-    currentData.innerText = result;
-    previousData.innerText = " ";
-    operation = undefined;
+    newCurrentValue = result;
+    newPreviousValue = "";
+    operation = "";
 
-    displayOnCalculatorScreen(
-        currentData,
-        currentDataValue,
-        previousData,
-        previousDataValue,
-        operation
-    );
+    return { newCurrentValue, newPreviousValue, operation };
 };

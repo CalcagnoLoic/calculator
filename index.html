@@ -7,7 +7,7 @@
         <meta
             name="description"
             content="Creation of a calculator with VanillaJS and TailwindCSS" />
-        <title>Calculator</title>
+        <title>Calculator App</title>
         <link rel="stylesheet" href="assets/style/output.css" />
         <link
             rel="shortcut icon"
@@ -16,30 +16,29 @@
         <script src="assets/scripts/main.js" type="module"></script>
     </head>
     <body
-        class="bg-primary theme theme-1 flex h-screen flex-col justify-between font-leagueSpartan">
+        class="theme flex h-screen flex-col justify-between bg-primary font-leagueSpartan theme-1">
         <main class="mt-16">
             <!-- Container principal -->
             <div
                 class="mx-auto flex flex-col items-center justify-center gap-4">
                 <!-- Container de changement de thème-->
-                <div class="flex gap-20">
+                <div class="flex w-[308px] gap-20 rounded bg-ternary p-5">
                     <h2
-                        class="text-quaternary self-baseline text-4xl font-bold">
+                        class="self-baseline text-4xl font-bold text-quaternary">
                         calc
                     </h2>
                     <div class="flex gap-4 self-baseline">
-                        <p class="text-quaternary text-[15px] uppercase">
+                        <p class="text-[15px] uppercase text-quaternary">
                             Theme
                         </p>
                         <div
-                            class="w-[5.3rem] bg-primary-dark relative inline-block h-5 rounded-xl px-1 py-1">
+                            class="relative inline-block h-5 w-[5.3rem] rounded-xl bg-primary-dark px-1 py-1">
                             <input
                                 class="toggle-input absolute appearance-none"
                                 type="radio"
                                 id="theme-1"
                                 value="theme-1"
                                 name="theme"
-                                onclick="switchIntoTheme1()"
                                 checked />
                             <label
                                 for="theme-1"
@@ -51,7 +50,6 @@
                                 type="radio"
                                 id="theme-2"
                                 value="theme-2"
-                                onclick="switchIntoTheme2()"
                                 name="theme" />
                             <label
                                 for="theme-2"
@@ -63,7 +61,6 @@
                                 type="radio"
                                 id="theme-3"
                                 value="theme-3"
-                                onclick="switchIntoTheme3()"
                                 name="theme" />
                             <label
                                 for="theme-3"
@@ -77,122 +74,49 @@
                 </div>
 
                 <!-- Container d'affichage du résultat -->
-                <div class="bg-primary-darker w-[308px] rounded p-5">
+                <div class="w-[308px] rounded bg-primary-darker p-5">
                     <span
-                        class="text-quaternary flex justify-end"
+                        class="flex justify-end text-quaternary"
                         id="previousData"></span>
                     <span
-                        class="text-quaternary flex justify-end text-2xl font-bold"
+                        class="flex justify-end text-2xl font-bold text-quaternary"
                         id="currentData"></span>
                 </div>
 
                 <!-- Container 'calculatrice '-->
-                <div class="bg-primary-dark flex flex-col gap-3 rounded p-5">
+                <div class="flex flex-col gap-3 rounded bg-primary-dark p-5">
                     <!-- Rang 7 à DEL -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            7
-                        </button>
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            8
-                        </button>
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            9
-                        </button>
-                        <button
-                            class="btn btn_delete"
-                            id="btn-del"
-                            onclick="handleDelete()">
-                            DEL
-                        </button>
+                        <button class="btn btn_primary operand">7</button>
+                        <button class="btn btn_primary operand">8</button>
+                        <button class="btn btn_primary operand">9</button>
+                        <button class="btn btn_delete" id="btn-del">DEL</button>
                     </div>
                     <!-- Rang 4 à + -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            4
-                        </button>
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            5
-                        </button>
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            6
-                        </button>
-                        <button
-                            class="btn btn_primary operation"
-                            onclick="handleOperations('+')">
-                            +
-                        </button>
+                        <button class="btn btn_primary operand">4</button>
+                        <button class="btn btn_primary operand">5</button>
+                        <button class="btn btn_primary operand">6</button>
+                        <button class="btn btn_primary operation">+</button>
                     </div>
                     <!-- Rang 1 à - -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            1
-                        </button>
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            2
-                        </button>
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            3
-                        </button>
-                        <button
-                            class="btn btn_primary operation"
-                            onclick="handleOperations('-')">
-                            -
-                        </button>
+                        <button class="btn btn_primary operand">1</button>
+                        <button class="btn btn_primary operand">2</button>
+                        <button class="btn btn_primary operand">3</button>
+                        <button class="btn btn_primary operation">-</button>
                     </div>
                     <!-- Rang . à x -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            .
-                        </button>
-                        <button
-                            class="btn btn_primary operand"
-                            onclick="handleOperand()">
-                            0
-                        </button>
-                        <button
-                            class="btn btn_primary operation"
-                            onclick="handleOperations('/')">
-                            /
-                        </button>
-                        <button
-                            class="btn btn_primary operation"
-                            onclick="handleOperations('*')">
-                            x
-                        </button>
+                        <button class="btn btn_primary operand">.</button>
+                        <button class="btn btn_primary operand">0</button>
+                        <button class="btn btn_primary operation">/</button>
+                        <button class="btn btn_primary operation">x</button>
                     </div>
                     <!-- Rang RESET et = -->
                     <div class="flex justify-between gap-3">
-                        <button
-                            class="btn btn_reset"
-                            id="reset"
-                            onclick="handleRemove()">
-                            RESET
-                        </button>
-                        <button
-                            class="btn btn_remove"
-                            id="calculation"
-                            onclick="handleResult()">
+                        <button class="btn btn_reset" id="reset">RESET</button>
+                        <button class="btn btn_remove" id="calculation">
                             =
                         </button>
                     </div>
@@ -201,7 +125,7 @@
         </main>
 
         <footer class="bg-primary-darker py-5">
-            <p class="text-quaternary text-center">
+            <p class="text-center text-quaternary-light">
                 Coded by
                 <a href="https://github.com/CalcagnoLoic" target="_blank"
                     >@CalcagnoLoic</a

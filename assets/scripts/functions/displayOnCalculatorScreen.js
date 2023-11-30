@@ -18,14 +18,15 @@ export const displayOnCalculatorScreenForCurrentData = (curr, currVal) => {
  */
 export const displayOnCalculatorScreen = (
     curr,
-    currVal = " ",
+    currVal,
     prev,
-    prevVal = " ",
-    operation = " "
+    prevVal,
+    operation
 ) => {
     //affichage de la currentValue
     curr.innerText = currVal;
 
     // affichage de la previousValue
     if (operation !== undefined) prev.innerText = prevVal + operation + currVal;
+    if (operation === "") prev.innerText = "";
 };

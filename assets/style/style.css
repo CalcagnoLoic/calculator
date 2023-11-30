@@ -19,31 +19,31 @@
     }
 
     .btn_primary {
-        @apply bg-ternary border-b-ternary-dark text-quaternary;
+        @apply border-b-ternary-dark bg-ternary text-quaternary duration-300 ease-in-out active:scale-110;
     }
 
     .btn_delete {
-        @apply bg-primary-light border-b-primary-lighter text-quaternary-light text-2xl;
+        @apply border-b-primary-lighter bg-primary-light text-2xl text-quaternary-light duration-300 ease-in-out active:scale-110;
     }
 
     .btn_reset {
-        @apply bg-primary-light border-b-primary-lighter text-quaternary-light w-32 text-center text-xl;
+        @apply w-32 border-b-primary-lighter bg-primary-light text-center text-xl text-quaternary-light duration-300 ease-in-out active:scale-110;
     }
 
     .btn_remove {
-        @apply bg-secondary text-quaternary-light border-b-secondary-dark w-32;
+        @apply w-32 border-b-secondary-dark bg-secondary text-quaternary-light duration-300 ease-in-out active:scale-110;
     }
 
     .toggle-input[value="theme-1"]:checked ~ .toggle-span {
-        @apply bg-secondary left-[7px];
+        @apply left-[7px] bg-secondary;
     }
 
     .toggle-input[value="theme-2"]:checked ~ .toggle-span {
-        @apply bg-secondary left-[36px];
+        @apply left-[36px] bg-secondary;
     }
 
     .toggle-input[value="theme-3"]:checked ~ .toggle-span {
-        @apply bg-secondary left-[65px];
+        @apply left-[65px] bg-secondary;
     }
 }
 
