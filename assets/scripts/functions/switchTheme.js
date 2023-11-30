@@ -42,3 +42,20 @@ export const switchIntoTheme3 = () => {
         theme.classList.add("theme-3");
     });
 };
+
+export function handleTheme() {
+    const theme = document.querySelector(".theme");
+    const toggleInputs = document.querySelectorAll('.toggle-input')
+
+    toggleInputs.forEach(input => {
+        input.addEventListener('click', function(e) {
+            const selectedTheme = e.target.value
+
+            theme.classList.remove("theme-1");
+            theme.classList.remove("theme-2");
+            theme.classList.remove("theme-3");
+            
+            theme.classList.add(selectedTheme);
+        })
+    })
+}
