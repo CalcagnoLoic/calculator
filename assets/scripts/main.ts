@@ -16,9 +16,9 @@ const handleOperand = () => {
         operand.addEventListener("click", () => {
             const currentData = document.getElementById("currentData");
             const currentDataValue = currentData.innerText;
-            const operandValue = operand.innerText;
+            const operandValue = operand.innerHTML;
 
-            let result = displayCalculation(operandValue, currentDataValue);
+            const result = displayCalculation(operandValue, currentDataValue);
 
             displayOnCalculatorScreenForCurrentData(currentData, result);
         });
@@ -36,9 +36,9 @@ const handleOperation = () => {
             const currentData = document.getElementById("currentData");
             const previousData = document.getElementById("previousData");
             const currentDataValue = currentData.innerText;
-            let operatorValue = operator.innerText;
+            const operatorValue = operator.innerHTML;
 
-            let { newPreviousValue, newCurrentValue, operatorSign } =
+            const { newPreviousValue, newCurrentValue, operatorSign } =
                 displayOperation(currentDataValue, operatorValue);
 
             displayOnCalculatorScreen(
@@ -62,7 +62,7 @@ const handleDelete = () => {
         const currentData = document.getElementById("currentData");
         const currentDataValue = currentData.innerText;
 
-        let result = deleteOneSimpleValue(currentDataValue);
+        const result = deleteOneSimpleValue(currentDataValue);
 
         displayOnCalculatorScreenForCurrentData(currentData, result);
     });
@@ -79,9 +79,9 @@ const handleRemove = () => {
         const previousData = document.getElementById("previousData");
         const currentDataValue = currentData.innerText;
         const previousDataValue = previousData.innerText;
-        let operation;
+        let operation: string;
 
-        let { previousValue, currentValue, operationSign } = removeAll(
+        const { previousValue, currentValue, operationSign } = removeAll(
             previousDataValue,
             currentDataValue,
             operation
@@ -107,7 +107,8 @@ const handleSwitchTheme = () => {
 
     toggleInputs.forEach(input => {
         input.addEventListener("click", e => {
-            const themeValue = e.target.value;
+            const target = e.target as HTMLTextAreaElement;
+            const themeValue = target.value;
 
             theme.classList.remove("theme-1");
             theme.classList.remove("theme-2");
@@ -129,23 +130,21 @@ const handleCalculation = () => {
         const previousData = document.getElementById("previousData");
         const currentDataValue = currentData.innerText;
         const previousDataValue = previousData.innerText;
-        let operationSign = previousDataValue.substring(
+        const operationSign = previousDataValue.substring(
             previousDataValue.length - 1
         );
 
-        let { newCurrentValue, newPreviousValue, operation } = makeCalculation(
-            currentDataValue,
-            previousDataValue,
-            operationSign,
-            currentData,
-            previousData
-        );
-
-        console.log(newPreviousValue);
+        const { newCurrentValue, newPreviousValue, operation } =
+            makeCalculation(
+                currentDataValue,
+                previousDataValue,
+                operationSign,
+                previousData
+            );
 
         displayOnCalculatorScreen(
             currentData,
-            newCurrentValue,
+            String(newCurrentValue),
             previousData,
             newPreviousValue,
             operation

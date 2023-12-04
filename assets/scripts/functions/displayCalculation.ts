@@ -4,6 +4,9 @@
  * @param {string} currentValue - Value of existing number
  * @returns {string} The concatened number
  */
-export const displayCalculation = (newValue, currentValue) => {
+export const displayCalculation = (
+    newValue: string,
+    currentValue: string
+): string => {
     return currentValue + newValue;
 };
