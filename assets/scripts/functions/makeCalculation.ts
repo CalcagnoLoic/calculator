@@ -3,22 +3,19 @@
  * @param {string} currentValue - Value of first number
  * @param {string} previousValue - Value of second number
  * @param {string} operation - Value of operator
- * @param {Node} nodeCurrent - Node of the main line of calculator screen
- * @param {Node} nodePrevious - Node of the secondary line of calculator screen
- * @returns {string|void}
+ * @param {HTMLDivElement|HTMLElement} nodePrevious - Node of the secondary line of calculator screen
+ * @returns {makeCalculationObject}
  */
 export const makeCalculation = (
-    currentValue,
-    previousValue,
-    operation,
-    nodeCurrent,
-    nodePrevious
-) => {
-    let firstNumber = parseFloat(currentValue);
-    let secondNumber = parseFloat(previousValue);
-    let newCurrentValue = nodeCurrent.innerText;
+    currentValue: string,
+    previousValue: string,
+    operation: string,
+    nodePrevious: HTMLDivElement | HTMLElement
+): makeCalculationObject => {
+    const firstNumber = parseFloat(currentValue);
+    const secondNumber = parseFloat(previousValue);
     let newPreviousValue = nodePrevious.innerText;
-    let result;
+    let result: number;
 
     if (isNaN(firstNumber) || isNaN(secondNumber)) return;
 
@@ -39,7 +36,7 @@ export const makeCalculation = (
             return;
     }
 
-    newCurrentValue = result;
+    const newCurrentValue = Number(result);
     newPreviousValue = "";
     operation = "";
 

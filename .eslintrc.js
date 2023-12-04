@@ -4,7 +4,11 @@ module.exports = {
         es2015: true,
         node: true
     },
-    extends: "eslint:recommended",
+    extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
     overrides: [
         {
             env: {
@@ -21,5 +25,6 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module"
     },
+    parser: "@typescript-eslint/parser",
     rules: {}
 };

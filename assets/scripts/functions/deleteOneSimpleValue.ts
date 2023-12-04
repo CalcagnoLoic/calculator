@@ -4,6 +4,6 @@
  * @returns {string} The number without the last character
  */
 
-export const deleteOneSimpleValue = currentData => {
+export const deleteOneSimpleValue = (currentData: string): string => {
     return currentData.slice(0, -1);
 };
