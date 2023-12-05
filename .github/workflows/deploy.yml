@@ -1,0 +1,32 @@
+name: Deploying the calculator app to GH pages
+
+on:
+    push:
+        branches:
+            - core/deploying
+            - master
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs: 
+    linter:
+        runs-on: ubuntu-latest
+
+        steps: 
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install environment
+              uses: actions/setup-node@v4
+              with: 
+                node-version: 20
+                cache: 'npm'
+            
+            - name: Install dependencies
+              uses: npm ci
+            
+            - name: Running linter
+              run: npm run lint
