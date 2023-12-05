@@ -73,6 +73,8 @@ jobs:
             
             - name: Install dependencies
               run: npm ci
+
+            - run: ls -la
             
             - name: Configure GH pages
               uses: actions/configure-pages@v3 
@@ -81,6 +83,7 @@ jobs:
               uses: actions/upload-artifact@v3
               with: 
                 path: "./dist/"
+                if-no-files-found: error
 
             - name: Deploy to GH pages
               id: deployment
