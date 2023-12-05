@@ -2,8 +2,9 @@
     "scripts": {
         "format": "prettier --write .",
         "lint": "eslint --ignore-path .eslintignore --ext .ts .",
-        "compile": "tsc",
-        "test": "vitest"
+        "build": "tsc",
+        "test": "vitest",
+        "compile_style": "npx tailwindcss -i assets/style/style.css -o dist/style/output.css --watch"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^6.13.1",
