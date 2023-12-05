@@ -1,11 +1,5 @@
-/**
- * Function to perform the mathematical operation
- * @param {string} currentValue - Value of first number
- * @param {string} previousValue - Value of second number
- * @param {string} operation - Value of operator
- * @param {HTMLDivElement|HTMLElement} nodePrevious - Node of the secondary line of calculator screen
- * @returns {makeCalculationObject}
- */
+
+// A tester
 export const makeCalculation = (
     currentValue: string,
     previousValue: string,
@@ -37,8 +31,13 @@ export const makeCalculation = (
     }
 
     const newCurrentValue = Number(result);
-    newPreviousValue = "";
+    newPreviousValue = ""; // Ce traitement va plutôt dans handleCalculation
     operation = "";
+
+    console.log(currentValue)
+    console.log(previousValue)
+    console.log(operation)
+    console.log(nodePrevious)
 
     return { newCurrentValue, newPreviousValue, operation };
 };

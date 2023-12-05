@@ -35,18 +35,17 @@ const handleOperation = () => {
         operator.addEventListener("click", () => {
             const currentData = document.getElementById("currentData");
             const previousData = document.getElementById("previousData");
+
             const currentDataValue = currentData.innerText;
             const operatorValue = operator.innerHTML;
-
-            const { newPreviousValue, newCurrentValue, operatorSign } =
-                displayOperation(currentDataValue, operatorValue);
+            const newCurrentValue = ""
 
             displayOnCalculatorScreen(
                 currentData,
                 newCurrentValue,
                 previousData,
-                newPreviousValue,
-                operatorSign
+                currentDataValue,
+                operatorValue
             );
         });
     });
@@ -108,6 +107,7 @@ const handleSwitchTheme = () => {
     toggleInputs.forEach(input => {
         input.addEventListener("click", e => {
             const target = e.target as HTMLTextAreaElement;
+            // const target = e.target;
             const themeValue = target.value;
 
             theme.classList.remove("theme-1");
@@ -134,6 +134,7 @@ const handleCalculation = () => {
             previousDataValue.length - 1
         );
 
+        // Fait ton calcul -> 
         const { newCurrentValue, newPreviousValue, operation } =
             makeCalculation(
                 currentDataValue,
@@ -142,6 +143,7 @@ const handleCalculation = () => {
                 previousData
             );
 
+        //
         displayOnCalculatorScreen(
             currentData,
             String(newCurrentValue),
