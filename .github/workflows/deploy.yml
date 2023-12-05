@@ -80,7 +80,7 @@ jobs:
             - name: Uploading GH pages artifact
               uses: actions/upload-pages-artifact@v2
               with: 
-                path: './dist/'
+                path: "dist/"
 
             - name: Deploy to GH pages
               id: deployment
