@@ -33,6 +33,9 @@ jobs:
 
             - name: Running compiler
               run: npm run compile
+
+            - name: Generate file css
+              run: npx tailwindcss -i assets/style/style.css -o dist/style/output.css --watch
     
     build_and_testing:
         needs: linter
@@ -51,5 +54,24 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Generate file css
-              run: npx tailwindcss -i assets/style/style.css -o dist/style/output.css --watch
+            - name: Testing the app
+              run: npm run test
+    
+    deploy:
+        needs: build_and_testing
+        runs-on: ubuntu-latest
+
+        steps: 
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install environment
+              uses: actions/setup-node@v4
+              with: 
+                node-version: 20
+                cache: 'npm'
+            
+            - name: Install dependencies
+              run: npm ci
+            
+            
