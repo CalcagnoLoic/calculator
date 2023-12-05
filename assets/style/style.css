@@ -47,4 +47,4 @@
     }
 }
 
-/*npx tailwindcss -i assets/style/style.css -o assets/style/output.css --watch*/
+/*npx tailwindcss -i assets/style/style.css -o dist/style/output.css --watch*/

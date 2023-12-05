@@ -1,5 +1,4 @@
 import { displayCalculation } from "./functions/displayCalculation.js";
-import { displayOperation } from "./functions/displayOperation.js";
 import { deleteOneSimpleValue } from "./functions/deleteOneSimpleValue.js";
 import { removeAll } from "./functions/removeAll.js";
 import { displayOnCalculatorScreenForCurrentData } from "./functions/displayOnCalculatorScreen.js";
@@ -35,17 +34,16 @@ const handleOperation = () => {
         operator.addEventListener("click", () => {
             const currentData = document.getElementById("currentData");
             const previousData = document.getElementById("previousData");
-            const currentDataValue = currentData.innerText;
-            const operatorValue = operator.innerHTML;
 
-            const { newPreviousValue, newCurrentValue, operatorSign } =
-                displayOperation(currentDataValue, operatorValue);
+            const currentDataValue = currentData.innerText;
+            const operatorSign = operator.innerHTML;
+            const newCurrentValue = "";
 
             displayOnCalculatorScreen(
                 currentData,
                 newCurrentValue,
                 previousData,
-                newPreviousValue,
+                currentDataValue,
                 operatorSign
             );
         });
@@ -134,13 +132,13 @@ const handleCalculation = () => {
             previousDataValue.length - 1
         );
 
-        const { newCurrentValue, newPreviousValue, operation } =
-            makeCalculation(
-                currentDataValue,
-                previousDataValue,
-                operationSign,
-                previousData
-            );
+        const { newCurrentValue, operation } = makeCalculation(
+            currentDataValue,
+            previousDataValue,
+            operationSign
+        );
+
+        const newPreviousValue = "";
 
         displayOnCalculatorScreen(
             currentData,
