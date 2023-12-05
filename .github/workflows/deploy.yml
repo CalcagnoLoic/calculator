@@ -30,3 +30,6 @@ jobs:
             
             - name: Running linter
               run: npm run lint
+
+            - name: Running compiler
+              run: npm run compiler
