@@ -1,18 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-type removeAllObject = {
+type removeAll = {
     previousValue: string;
     currentValue: string;
     operationSign: string;
 };
 
-type makeCalculationObject = {
+type makeCalculation = {
     newCurrentValue: number | string;
-    newPreviousValue: string;
     operation: string;
-};
-
-type displayOperationObject = {
-    newPreviousValue: string;
-    newCurrentValue: string;
-    operatorSign: string;
 };
