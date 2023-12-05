@@ -20,14 +20,13 @@ export const makeCalculation = (
             result = firstNumber * secondNumber;
             break;
         case "/":
-            result = secondNumber / firstNumber;
+            result = Number((secondNumber / firstNumber).toFixed(3));
             break;
         default:
             return;
     }
 
     const newCurrentValue = Number(result);
-    //newPreviousValue = "";
     operation = "";
 
     return { newCurrentValue, operation };

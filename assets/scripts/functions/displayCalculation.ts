@@ -1,6 +1,6 @@
 export const displayCalculation = (
-    newValue: string,
-    currentValue: string
+    currentValue: string,
+    newValue: string
 ): string => {
-    return currentValue + newValue;
+    return newValue + currentValue;
 };
