@@ -6,6 +6,11 @@ on:
             - core/deploying
             - master
 
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+    
 jobs: 
     linter:
         runs-on: ubuntu-latest
@@ -46,10 +51,6 @@ jobs:
     build_and_deploy:
         needs: testing
         runs-on: ubuntu-latest
-        permissions:
-            contents: read
-            pages: write
-            id-token: write
 
         steps: 
             - uses: actions/checkout@v4
@@ -71,7 +72,7 @@ jobs:
               uses: actions/configure-pages@v3 
             
             - name: Uploading GH pages artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-pages-artifact@v2
               with: 
                 path: "./dist/"
                 if-no-files-found: error
