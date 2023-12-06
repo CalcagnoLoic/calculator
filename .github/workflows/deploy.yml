@@ -6,11 +6,6 @@ on:
             - core/deploying
             - master
 
-permissions:
-    contents: read
-    pages: write
-    id-token: write
-
 jobs: 
     linter:
         runs-on: ubuntu-latest
@@ -31,15 +26,35 @@ jobs:
             - name: Running linter
               run: npm run lint
     
-    build_and_testing:
+    testing:
         needs: linter
         runs-on: ubuntu-latest
 
         steps: 
             - uses: actions/checkout@v4
 
-            - name: Install environment
-              uses: actions/setup-node@v4
+            - uses: actions/setup-node@v4
+              with: 
+                node-version: 20
+                cache: 'npm'
+            
+            - run: npm ci
+
+            - name: Testing the app
+              run: npm run test
+    
+    build_and_deploy:
+        needs: testing
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pages: write
+            id-token: write
+
+        steps: 
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
               with: 
                 node-version: 20
                 cache: 'npm'
@@ -51,24 +66,6 @@ jobs:
 
             - name: Generate file css
               run: npm run compile_style
-
-            - name: Testing the app
-              run: npm run test
-    
-    deploy:
-        needs: build_and_testing
-        runs-on: ubuntu-latest
-
-        steps: 
-            - uses: actions/checkout@v4
-
-            - name: Install environment
-              uses: actions/setup-node@v4
-              with: 
-                node-version: 20
-                cache: 'npm'
-            
-            - run: npm ci
             
             - name: Configure GH pages
               uses: actions/configure-pages@v3 
