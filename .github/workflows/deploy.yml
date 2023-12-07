@@ -81,6 +81,11 @@ jobs:
             - name: Uploading GH pages artifact
               uses: actions/upload-pages-artifact@v2
               with: 
+                path: ./
+                if-no-files-found: error
+
+            - uses: actions/upload-pages-artifact@v2
+              with: 
                 path: ./dist/
                 if-no-files-found: error
 
