@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: leagueSpartan;
-    src: url(../assets/fonts/League_Spartan/static/LeagueSpartan-Regular.ttf);
+    src: url(../dist/fonts/LeagueSpartan-Regular.ttf);
 }
 
 @layer base {
