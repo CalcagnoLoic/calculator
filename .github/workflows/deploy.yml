@@ -76,7 +76,7 @@ jobs:
             - name: Configure GH pages
               uses: actions/configure-pages@v3 
           
-            - run: cp index.html /dist/
+            - run: cp index.html ./dist/
 
             - uses: actions/upload-pages-artifact@v2
               with: 
