@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: leagueSpartan;
-    src: url(../../assets/fonts/League_Spartan/static/LeagueSpartan-Regular.ttf);
+    src: url(../assets/fonts/League_Spartan/static/LeagueSpartan-Regular.ttf);
 }
 
 @layer base {
@@ -47,4 +47,3 @@
     }
 }
 
-/*npx tailwindcss -i assets/style/style.css -o dist/style/output.css --watch*/
