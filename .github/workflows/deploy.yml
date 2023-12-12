@@ -7,7 +7,7 @@ on:
             - master
     
 jobs: 
-    linter:
+    lint_and_build:
         runs-on: ubuntu-latest
 
         steps: 
@@ -25,26 +25,12 @@ jobs:
             
             - name: Running linter
               run: npm run lint
-    
-    testing:
-        needs: linter
-        runs-on: ubuntu-latest
-
-        steps: 
-            - uses: actions/checkout@v4
-
-            - uses: actions/setup-node@v4
-              with: 
-                node-version: 20
-                cache: 'npm'
-            
-            - run: npm ci
 
             - name: Testing the app
               run: npm run test
     
     build_and_deploy:
-        needs: testing
+        needs: lint_and_build
 
         environment: 
             name: github-pages
@@ -87,7 +73,6 @@ jobs:
             - uses: actions/upload-pages-artifact@v2
               with: 
                 path: ./dist/
-                if-no-files-found: error
 
             - name: Deploy to GH pages
               id: deployment
