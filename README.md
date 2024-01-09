@@ -12,9 +12,9 @@
 
 Users should be able to:
 
--   [x] See the size of the elements adjust based on their device's screen size
--   [x] Perform mathematical operations like addition, subtraction, multiplication, and division
--   [x] Adjust the color theme based on their preference
+- [x] See the size of the elements adjust based on their device's screen size
+- [x] Perform mathematical operations like addition, subtraction, multiplication, and division
+- [x] Adjust the color theme based on their preference
 
 <p align="center">
     <img src="assets/images/design2.png" alt="design2" width="50%">
@@ -23,13 +23,13 @@ Users should be able to:
 
 ### Built with
 
--   Semantic HTML5 markup
--   Tailwind with custom properties
--   Flexbox
--   Mobile-first workflow
--   Typescript
+- Semantic HTML5 markup
+- Tailwind with custom properties
+- Flexbox
+- Mobile-first workflow
+- Typescript
 
 ## Author
 
--   Portfolio - [Calcagno Loïc](https://calcagno-loic.netlify.app/)
--   Frontend Mentor - [@CalcagnoLoic](https://www.frontendmentor.io/profile/CalcagnoLoic)
+- Portfolio - [Calcagno Loïc](https://calcagno-loic.netlify.app/)
+- Frontend Mentor - [@CalcagnoLoic](https://www.frontendmentor.io/profile/CalcagnoLoic)

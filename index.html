@@ -1,137 +1,122 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="Calcagno Loïc" />
-        <meta
-            name="description"
-            content="Creation of a calculator with TypeScript and TailwindCSS" />
-        <title>Calculator App</title>
-        <link rel="stylesheet" href="style/output.css" />
-        <link
-            rel="shortcut icon"
-            href="favicon-32x32.png"
-            type="image/x-icon" />
-        <script src="scripts/main.js" type="module"></script>
-    </head>
-    <body
-        class="theme flex h-screen flex-col justify-between bg-primary font-leagueSpartan theme-1">
-        <header></header>
-        <main>
-            <!-- Container principal -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Calcagno Loïc" />
+    <meta
+      name="description"
+      content="Creation of a calculator with TypeScript and TailwindCSS"
+    />
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="style/output.css" />
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon" />
+    <script src="scripts/main.js" type="module"></script>
+  </head>
+  <body
+    class="theme flex h-screen flex-col justify-between bg-primary font-leagueSpartan theme-1"
+  >
+    <main>
+      <!-- Container principal -->
+      <div class="mx-auto flex flex-col items-center justify-center gap-4">
+        <!-- Container de changement de thème-->
+        <div class="flex w-[308px] gap-20 rounded bg-ternary p-5">
+          <h2 class="self-baseline text-4xl font-bold text-quaternary">calc</h2>
+          <div class="flex max-w-xs gap-4 self-baseline">
+            <p class="text-[15px] uppercase text-quaternary">Theme</p>
             <div
-                class="mx-auto flex flex-col items-center justify-center gap-4">
-                <!-- Container de changement de thème-->
-                <div class="flex w-[308px] gap-20 rounded bg-ternary p-5">
-                    <h2
-                        class="self-baseline text-4xl font-bold text-quaternary">
-                        calc
-                    </h2>
-                    <div class="flex gap-4 self-baseline max-w-xs">
-                        <p class="text-[15px] uppercase text-quaternary">
-                            Theme
-                        </p>
-                        <div
-                            class="relative inline-block h-5 w-[5.3rem] rounded-xl bg-primary-dark px-1 py-1">
-                            <input
-                                class="toggle-input absolute appearance-none"
-                                type="radio"
-                                id="theme-1"
-                                value="theme-1"
-                                name="theme"
-                                checked />
-                            <label
-                                for="theme-1"
-                                class="absolute -top-6 left-[2px] cursor-pointer px-2 py-1 text-center text-quaternary"
-                                >1</label
-                            >
-                            <input
-                                class="toggle-input absolute appearance-none"
-                                type="radio"
-                                id="theme-2"
-                                value="theme-2"
-                                name="theme" />
-                            <label
-                                for="theme-2"
-                                class="absolute -top-6 left-[30px] cursor-pointer px-2 py-1 text-center text-quaternary"
-                                >2</label
-                            >
-                            <input
-                                class="toggle-input absolute appearance-none"
-                                type="radio"
-                                id="theme-3"
-                                value="theme-3"
-                                name="theme" />
-                            <label
-                                for="theme-3"
-                                class="absolute -top-6 left-[60px] cursor-pointer px-2 py-1 text-center text-quaternary"
-                                >3</label
-                            >
-                            <span
-                                class="toggle-span absolute left-0 top-1 h-3 w-3 rounded-full duration-300 ease-in-out"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Container d'affichage du résultat -->
-                <div class="w-[308px] rounded bg-primary-darker p-5">
-                    <span
-                        class="flex justify-end text-quaternary"
-                        id="previousData"></span>
-                    <span
-                        class="flex justify-end text-2xl font-bold text-quaternary"
-                        id="currentData"></span>
-                </div>
-
-                <!-- Container 'calculatrice '-->
-                <div class="flex flex-col gap-3 rounded bg-primary-dark p-5">
-                    <!-- Rang 7 à DEL -->
-                    <div class="flex justify-between gap-3">
-                        <button class="btn btn_primary operand">7</button>
-                        <button class="btn btn_primary operand">8</button>
-                        <button class="btn btn_primary operand">9</button>
-                        <button class="btn btn_delete" id="btn-del">DEL</button>
-                    </div>
-                    <!-- Rang 4 à + -->
-                    <div class="flex justify-between gap-3">
-                        <button class="btn btn_primary operand">4</button>
-                        <button class="btn btn_primary operand">5</button>
-                        <button class="btn btn_primary operand">6</button>
-                        <button class="btn btn_primary operation">+</button>
-                    </div>
-                    <!-- Rang 1 à - -->
-                    <div class="flex justify-between gap-3">
-                        <button class="btn btn_primary operand">1</button>
-                        <button class="btn btn_primary operand">2</button>
-                        <button class="btn btn_primary operand">3</button>
-                        <button class="btn btn_primary operation">-</button>
-                    </div>
-                    <!-- Rang . à x -->
-                    <div class="flex justify-between gap-3">
-                        <button class="btn btn_primary operand">.</button>
-                        <button class="btn btn_primary operand">0</button>
-                        <button class="btn btn_primary operation">/</button>
-                        <button class="btn btn_primary operation">x</button>
-                    </div>
-                    <!-- Rang RESET et = -->
-                    <div class="flex justify-between gap-3">
-                        <button class="btn btn_reset" id="reset">RESET</button>
-                        <button class="btn btn_remove" id="calculation">
-                            =
-                        </button>
-                    </div>
-                </div>
+              class="relative inline-block h-5 w-[5.3rem] rounded-xl bg-primary-dark px-1 py-1"
+            >
+              <input
+                class="toggle-input absolute appearance-none"
+                type="radio"
+                id="theme-1"
+                value="theme-1"
+                name="theme"
+                checked
+              />
+              <label for="theme-1" class="left-[2px]">1</label>
+              <input
+                class="toggle-input absolute appearance-none"
+                type="radio"
+                id="theme-2"
+                value="theme-2"
+                name="theme"
+              />
+              <label for="theme-2" class="left-[30px]">2</label>
+              <input
+                class="toggle-input absolute appearance-none"
+                type="radio"
+                id="theme-3"
+                value="theme-3"
+                name="theme"
+              />
+              <label for="theme-3" class="left-[60px]">3</label>
+              <span
+                class="toggle-span absolute left-0 top-1 h-3 w-3 rounded-full duration-300 ease-in-out"
+              ></span>
             </div>
-        </main>
+          </div>
+        </div>
 
-        <footer class="bg-primary-darker py-5">
-            <p class="text-center text-quaternary-light">
-                Coded by
-                <a href="https://github.com/CalcagnoLoic" target="_blank"
-                    >@CalcagnoLoic</a
-                >.
-            </p>
-        </footer>
-    </body>
+        <!-- Container d'affichage du résultat -->
+        <div class="w-[308px] rounded bg-primary-darker p-5">
+          <span
+            class="flex justify-end text-quaternary"
+            id="previousData"
+          ></span>
+          <span
+            class="flex justify-end text-2xl font-bold text-quaternary"
+            id="currentData"
+          ></span>
+        </div>
+
+        <!-- Container 'calculatrice '-->
+        <div class="flex flex-col gap-3 rounded bg-primary-dark p-5">
+          <!-- Rang 7 à DEL -->
+          <div class="flex justify-between gap-3">
+            <button class="btn btn_primary operand">7</button>
+            <button class="btn btn_primary operand">8</button>
+            <button class="btn btn_primary operand">9</button>
+            <button class="btn btn_delete" id="btn-del">DEL</button>
+          </div>
+          <!-- Rang 4 à + -->
+          <div class="flex justify-between gap-3">
+            <button class="btn btn_primary operand">4</button>
+            <button class="btn btn_primary operand">5</button>
+            <button class="btn btn_primary operand">6</button>
+            <button class="btn btn_primary operation">+</button>
+          </div>
+          <!-- Rang 1 à - -->
+          <div class="flex justify-between gap-3">
+            <button class="btn btn_primary operand">1</button>
+            <button class="btn btn_primary operand">2</button>
+            <button class="btn btn_primary operand">3</button>
+            <button class="btn btn_primary operation">-</button>
+          </div>
+          <!-- Rang . à x -->
+          <div class="flex justify-between gap-3">
+            <button class="btn btn_primary operand">.</button>
+            <button class="btn btn_primary operand">0</button>
+            <button class="btn btn_primary operation">/</button>
+            <button class="btn btn_primary operation">x</button>
+          </div>
+          <!-- Rang RESET et = -->
+          <div class="flex justify-between gap-3">
+            <button class="btn btn_reset" id="reset">RESET</button>
+            <button class="btn btn_remove" id="calculation">=</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-primary-darker py-5">
+      <p class="text-center text-quaternary-light">
+        Coded by
+        <a href="https://github.com/CalcagnoLoic" target="_blank"
+          >@CalcagnoLoic</a
+        >.
+      </p>
+    </footer>
+  </body>
 </html>
