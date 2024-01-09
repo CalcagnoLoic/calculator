@@ -3,7 +3,7 @@ name: Deploying the calculator app to GH pages
 on:
     push:
         branches:
-            - core/deploying
+            - dev
             - master
     
 jobs: 
