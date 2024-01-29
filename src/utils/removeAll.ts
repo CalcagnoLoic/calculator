@@ -1,8 +1,10 @@
+import { removeAllType } from "../types/type";
+
 export const removeAll = (
   previousValue: string,
   currentValue: string,
   operationSign: string,
-): removeAll => {
+): removeAllType => {
   previousValue = "";
   currentValue = "";
   operationSign = undefined;

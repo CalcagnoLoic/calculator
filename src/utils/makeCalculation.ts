@@ -1,8 +1,10 @@
+import { makeCalculationType } from "../types/type";
+
 export const makeCalculation = (
   currentValue: string,
   previousValue: string,
   operation: string,
-): makeCalculation => {
+): makeCalculationType => {
   const firstNumber = parseFloat(currentValue);
   const secondNumber = parseFloat(previousValue);
   let result: number;

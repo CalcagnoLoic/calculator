@@ -1,12 +1,12 @@
-type removeAll = {
+type removeAllType = {
   previousValue: string;
   currentValue: string;
   operationSign: string;
 };
 
-type makeCalculation = {
+type makeCalculationType = {
   newCurrentValue: number | string;
   operation: string;
 };
 
-export { removeAll, makeCalculation };
+export { removeAllType, makeCalculationType };
