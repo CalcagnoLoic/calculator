@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { makeCalculation } from "../utils/makeCalculation";
+import { makeCalculation } from "./makeCalculation";
 
 describe("makeCalculation Unit Test Suites", () => {
   it("should return something", () => {

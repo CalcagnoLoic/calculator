@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { removeAll } from "../utils/removeAll";
+import { removeAll } from "./removeAll";
 
 describe("removeAll Unit Test Suite", () => {
   it("should return something", () => {

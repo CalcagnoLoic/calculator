@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { displayCalculation } from "../utils/displayCalculation";
+import { displayCalculation } from "./displayCalculation";
 
 describe("displayCalculation Unit Test Suites", () => {
   it("should return something", () => {
